@@ -1,0 +1,30 @@
+# Graffiti
+Graffiti is a MediaWiki portal for Gemini. A limited selection of wikis are
+available, but they include the English Wikipedia, the NetHack Wiki, and Explain
+XKCD.
+
+The software is written in Rust, and is available on GitHub via HTTPS (eww).
+=> https://github.com/thatlittlegit/graffiti Source Code
+
+Currently, these wikis are available:
+=> /wikipedia English Wikipedia
+=> /nethack NetHack Wiki
+=> /xkcd Explain XKCD
+
+## How it Works
+It uses Reqwest to send an API call using the MediaWiki API. This response is
+currently shovelled back to you in an preformatted area.
+
+I plan to shift this server over to a more complete, generic server. At that
+point, I'll move Graffiti from a full Gemini server into a CGI-like Perl script
+that uses HTTP::Tiny, and actually parses some Wikitext into Gemini format.
+
+(Do note that sidebars wouldn't be transformed: it requires too much knowledge
+about the wiki.)
+
+=> https://www.mediawiki.org/wiki/API:Get_the_contents_of_a_page MediaWiki API Docs
+
+## Terms of Service and Privacy Policy
+Don't spam requests, don't do anything illegal. I don't log anything you put in.
+However, wikis might, and I plan to pass an X-Forwarded-For header with your IP.
+Just don't do anything if you won't do it directly to the wiki, please.
